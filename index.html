@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="styles/vendor.c3472626.css">
+    <link rel="stylesheet" href="styles/main.a1611365.css">
+
+</head>
+<body ng-app="grapheApp" ng-controller="MainCtrl" layout="row" class="md-body-1">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left"
+            md-is-locked-open="{{false}}">
+
+    <md-toolbar class="md-whiteframe-z1" style="background-color: #466ed6">
+        <div style="padding-left: 25px"><h3>Graphe</h3></div>
+    </md-toolbar>
+
+    <md-list>
+        <md-list-item ng-repeat="option in menuOptions" ng-click="go(option.link, true)" >
+
+            {{option.label}}
+
+        </md-list-item>
+    </md-list>
+
+</md-sidenav>
+
+
+<div id="maindiv" flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z3" style="height: 100%;">
+
+    <md-toolbar id="toolbar" ng-hide="isShowContextToolbar">
+        <div class="md-toolbar-tools">
+
+            <md-button ng-click="toggleSidenav('left')"  class="md-icon-button">
+                <md-icon>menu</md-icon>
+            </md-button>
+
+            <h1>Graphe</h1>
+
+        </div>
+    </md-toolbar>
+
+    <md-toolbar id="contexttoolbar" ng-show="isShowContextToolbar" >
+        <div class="md-toolbar-tools" style="background-color:{{currentOption.color}};">
+
+            <md-button class="md-icon-button">
+                <md-icon ng-click="cancel()">arrow_back</md-icon>
+            </md-button>
+
+            <md-button ng-repeat="option in currentOption.contextOptions" class="md-icon-button">
+                <md-icon ng-click="setCurrentOption(option)">{{option.icon}}</md-icon>
+            </md-button>
+
+            <span flex></span>
+
+            {{currentOption.name}}
+
+            <md-button class="md-icon-button">
+                <md-icon ng-click="showHelp()">help</md-icon>
+            </md-button>
+
+        </div>
+    </md-toolbar>
+
+    <md-toolbar id="messages" ng-show="hasMessages()" style="min-height: 40px; height: 40px;">
+        <div class="md-toolbar-tools" style="background-color: #710909; height: 40px; min-height: 40px;">
+            <h1>{{message}}</h1>
+        </div>
+    </md-toolbar>
+
+    <div  ng-view id="content" style="height: 100%;"></div>
+
+</div>
+
+<script src="scripts/vendor.2641f438.js"></script>
+
+<script src="scripts/scripts.3ab05aff.js"></script>
+
+</body>
+</html>
