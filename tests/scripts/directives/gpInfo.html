@@ -1,0 +1,14 @@
+<table> <tr> <td class="md-body-2">Graph order |V| <td>{{graph.getNodes().length}}  <tr> <td class="md-body-2">Graph size |E| <td>{{graph.getLinks().length}}  <tr> <td class="md-body-2">G = (V,E) <td>   <tr> <td colspan="2" class="md-body-2">V = { <span ng-repeat="node in graph.getNodes()" ng-mouseenter="selectNode(node.index)" ng-mouseleave="deselectNode(node.index)"> <span ng-show="!$first">,</span>{{node.label}}</span> }   <tr> <td colspan="2" class="md-body-2">E = { <span ng-repeat="edge in graph.getLinks()"> <span ng-show="!$first">,</span> <span>{ {{edge.source.label}}, {{edge.target.label}} }</span> </span> }   </table> <!-- TODO fix logic
+<table>
+<tr>
+    <th>v</th>
+    <th>S(v)</th>
+    <th>|S(v)|</th>
+    <th>I(w)</th>
+    <th>|I(w)|</th>
+</tr>
+    <tr ng-repeat="node in graph.getNodes()">
+        <td>{{node.label}}</td>
+        <td><span ng-repeat="adjacent in graph.getAdjacentNodes(node.index)">{ {{node.label}} , {{adjacent.label}} }</span></td>
+    </tr>
+</table>-->
