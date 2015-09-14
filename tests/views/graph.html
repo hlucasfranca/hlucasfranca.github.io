@@ -1,12 +1,58 @@
-<div layout="row" layout-sm="column" layout-fill style="height: 100%" gp-container> <div flex layout="column" style="height: 100%" id="gp-stage-container"> <gp-stage></gp-stage> </div> <div flex style="height: 100%"> <md-tabs class="md-primary md-hue-1" md-align-tabs="top" flex> <md-tab id="tab1"> <md-tab-label>Graph info</md-tab-label> <md-tab-body> <md-content> <gp-info></gp-info> </md-content> </md-tab-body> </md-tab> <md-tab id="tab2"> <md-tab-label>Adjacency list</md-tab-label> <md-tab-body> <gp-adjascent-list></gp-adjascent-list> </md-tab-body> </md-tab> <!--<md-tab id="tab3">
+<div layout="row" layout-sm="column" layout-fill style="height: 100%"  gp-container>
+    <div flex layout="column" style="height: 100%;" id="gp-stage-container">
+        <gp-stage></gp-stage>
+    </div>
+
+    <div flex>
+        <md-tabs class="md-primary md-hue-1" md-align-tabs="top" flex >
+            <md-tab id="tab1">
+                <md-tab-label>Graph info</md-tab-label>
+
+                <md-tab-body>
+                    <md-content>
+                        <gp-info></gp-info>
+                    </md-content>
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab id="tab2">
+                <md-tab-label>Adjacency list</md-tab-label>
+                <md-tab-body>
+                        <gp-adjascent-list></gp-adjascent-list>
+                    </md-tab-body>
+                </md-tab>
+
+            <md-tab id="tab3">
                 <md-tab-label>Adjacency matrix</md-tab-label>
                 <md-tab-body>
-                    <gp-adjascent-matrix></gp-adjascent-matrix>
-
+                        <md-content>
+                            <gp-adjascent-matrix></gp-adjascent-matrix>
+                        </md-content>
                     </md-tab-body>
-                </md-tab>--> <md-tab id="tab4"> <md-tab-label>Algorithms</md-tab-label> <md-tab-body> <md-content> <!--
+                </md-tab>
+
+            <md-tab id="tab4" >
+                <md-tab-label>Algorithms</md-tab-label>
+                <md-tab-body>
+                    <!--
                     TODO: add list of all available algorithms
                     <md-select ng-model="selectedAlgorithm">
                         <md-option ng-repeat="algorithm in algorithms">{{algorithm.name}}</md-option>
 
-                    </md-select>--> <gp-algorithm-player> <gp-step-list></gp-step-list> </gp-algorithm-player> </md-content> </md-tab-body> </md-tab> </md-tabs> </div> </div>
+                    </md-select>-->
+
+                    <gp-algorithm-player>
+                        <gp-step-list></gp-step-list>
+                    </gp-algorithm-player>
+
+
+                </md-tab-body>
+            </md-tab>
+
+        </md-tabs>
+    </div>
+</div>
+
+
+
+

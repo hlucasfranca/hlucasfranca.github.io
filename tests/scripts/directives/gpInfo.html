@@ -1,4 +1,45 @@
-<table> <tr> <td class="md-body-2">Graph order |V| <td>{{graph.getNodes().length}}  <tr> <td class="md-body-2">Graph size |E| <td>{{graph.getLinks().length}}  <tr> <td class="md-body-2">G = (V,E) <td>   <tr> <td colspan="2" class="md-body-2">V = { <span ng-repeat="node in graph.getNodes()" ng-mouseenter="selectNode(node.index)" ng-mouseleave="deselectNode(node.index)"> <span ng-show="!$first">,</span>{{node.label}}</span> }   <tr> <td colspan="2" class="md-body-2">E = { <span ng-repeat="edge in graph.getLinks()"> <span ng-show="!$first">,</span> <span>{ {{edge.source.label}}, {{edge.target.label}} }</span> </span> }   </table> <!-- TODO fix logic
+<table>
+
+    <tr>
+        <td class="md-body-2">Graph order |V|</td>
+        <td>{{graph.getNodes().length}}</td>
+    </tr>
+
+    <tr>
+        <td class="md-body-2">Graph size |E|</td>
+        <td>{{graph.getLinks().length}}</td>
+    </tr>
+
+    <tr>
+        <td class="md-body-2">G = (V,E)</td>
+        <td>
+
+        </td>
+
+
+    </tr>
+
+    <tr>
+        <td colspan="2" class="md-body-2">V = {
+        <span ng-repeat="node in graph.getNodes()"
+              ng-mouseenter="selectNode(node.index)"
+              ng-mouseleave="deselectNode(node.index)">
+            <span ng-show="!$first">,</span>{{node.label}}</span> }
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="md-body-2">E = {
+        <span ng-repeat="edge in graph.getLinks()">
+            <span ng-show="!$first">,</span>
+                <span>{ {{edge.source.label}}, {{edge.target.label}} }</span>
+        </span> }
+        </td>
+    </tr>
+</table>
+
+
+<!-- TODO fix logic
 <table>
 <tr>
     <th>v</th>
